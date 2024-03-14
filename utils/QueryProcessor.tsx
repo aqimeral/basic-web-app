@@ -24,13 +24,25 @@ export default function QueryProcessor(query: string): string {
 
   if (query.toLowerCase().includes("largest")) {
     // Extract numbers from the query
-    const numbers = query.match(/\d+/g).map(Number);
+    const match = query.match(/\d+/g);
+    if (match) {
+      const numbers = match.map(Number);
     
     // Find the largest number
     const largest = Math.max(...numbers);
   
     return `${largest}`;
   }
+
+  // if (query.toLowerCase().includes("plus")) {
+  //   // Extract numbers from the query
+  //   const numbers = query.match(/\d+/g).map(Number);
+    
+  //   // Find the largest number
+  //   const theirsum = Math.sum(...numbers);
+  
+  //   return `${theirsum}`;
+  // }
   
 
   return "";
