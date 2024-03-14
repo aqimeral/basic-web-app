@@ -130,6 +130,20 @@ if (query.toLowerCase().includes("multiplied")) {
     }
   }
 
+  if (query.toLowerCase().includes("power of")) {
+    // Extract numbers from the query
+    const match = query.match(/\d+/g);
+    if (match && match.length >= 2) {
+      const base = Number(match[0]);
+      const exponent = Number(match[1]);
+  
+      // Calculate the result
+      const result = Math.pow(base, exponent);
+  
+      return `${result}`;
+    }
+  }
+
   
 
   
