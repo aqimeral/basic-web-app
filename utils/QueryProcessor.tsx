@@ -86,6 +86,19 @@ if (query.toLowerCase().includes("multiplied")) {
     }
   }
 
+  if (query.toLowerCase().includes("minus")) {
+    // Extract numbers from the query
+    const match = query.match(/\d+/g);
+    if (match) {
+      const numbers = match.map(Number);
+
+      // Add all the numbers
+      const sum = numbers.reduce((acc, num) => acc - num, 0);
+
+      return `${sum}`;
+    }
+  }
+
   
 
   
