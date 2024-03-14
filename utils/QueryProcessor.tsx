@@ -21,10 +21,15 @@ export default function QueryProcessor(query: string): string {
       "efa159ad"
     );
   }
-  if (query.toLowerCase().includes("what is your player id")) {
-    return (
-      "8b50c045"
-    );
+
+  if (query.toLowerCase().includes("largest")) {
+    // Extract numbers from the query
+    const numbers = query.match(/\d+/g).map(Number);
+    
+    // Find the largest number
+    const largest = Math.max(...numbers);
+  
+    return `${largest}`;
   }
   
 
