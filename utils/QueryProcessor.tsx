@@ -22,7 +22,7 @@ export default function QueryProcessor(query: string): string {
     );
   }
 
-  if (query.toLowerCase().includes("largest")) {
+  if (query.toLowerCase().includes("largest:")) {
     // Extract numbers from the query
     const match = query.match(/\d+/g);
     if (match) {
@@ -33,6 +33,7 @@ export default function QueryProcessor(query: string): string {
   
     return `${largest}`;
   }
+}
 
   // if (query.toLowerCase().includes("plus")) {
   //   // Extract numbers from the query
