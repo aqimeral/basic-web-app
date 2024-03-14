@@ -63,7 +63,7 @@ if (query.toLowerCase().includes("multiplied")) {
     }
   }
 
-  if (query.toLowerCase().includes("plus")) {
+  if (query.toLowerCase().includes("cube")) {
     // Extract numbers from the query
     const match = query.match(/\d+/g);
     if (match) {
