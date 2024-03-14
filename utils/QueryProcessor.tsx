@@ -92,10 +92,41 @@ if (query.toLowerCase().includes("multiplied")) {
     if (match) {
       const numbers = match.map(Number);
 
-      // Add all the numbers
-      const sum = numbers.reduce((acc, num) => acc - num, 0);
+          // Subtract all the numbers starting from the first number
+    const difference = numbers.reduce((acc, num, index) => {
+      // For the first number, simply return the number itself
+      if (index === 0) {
+        return num;
+      }
+      // For subsequent numbers, subtract them from the accumulated result
+      return acc - num;
+    }, 0);
 
-      return `${sum}`;
+    return `${difference}`;
+    }
+  }
+
+  if (query.toLowerCase().includes("prime")) {
+    // Extract numbers from the query
+    const match = query.match(/\d+/g);
+    if (match) {
+      const numbers = match.map(Number);
+
+
+      for (const num of numbers) {
+        if (num <= 1) {
+        }
+        
+        // Check for divisibility by numbers up to the square root of the given number
+        const sqrtNum = Math.sqrt(num);
+        for (let i = 2; i <= sqrtNum; i++) {
+          if (num % i === 0) {
+            // If the number is divisible by any other number, it's not prime
+          }
+        }
+        return `${num}`;
+      }
+
     }
   }
 
