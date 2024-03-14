@@ -31,7 +31,7 @@ export default function QueryProcessor(query: string): string {
     // Find the largest number
     const largest = Math.max(...numbers);
   
-    return `${largest}`;
+    return "helloo";
   }
 }
 
