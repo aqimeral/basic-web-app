@@ -63,6 +63,31 @@ if (query.toLowerCase().includes("multiplied")) {
     }
   }
 
+  if (query.toLowerCase().includes("plus")) {
+    // Extract numbers from the query
+    const match = query.match(/\d+/g);
+    if (match) {
+      const numbers = match.map(Number);
+
+
+      for (const num of numbers) {
+        // Check if the number is a perfect square
+        const sqrt = Math.sqrt(num);
+        if (Number.isInteger(sqrt)) {
+          // Check if the square root is also a perfect cube
+          const cubeRoot = Math.cbrt(num);
+          if (Number.isInteger(cubeRoot)) {
+            // Return the number if it's both a perfect square and a perfect cube
+            return `${num}`;
+          }
+        }
+      }
+
+    }
+  }
+
+  
+
   
   return "";
 }
