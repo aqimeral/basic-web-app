@@ -16,6 +16,17 @@ export default function QueryProcessor(query: string): string {
       "cassandra"
     );
   }
+  if (query.toLowerCase().includes("what is your player id")) {
+    return (
+      "efa159ad"
+    );
+  }
+  if (query.toLowerCase().includes("what is your player id")) {
+    return (
+      "8b50c045"
+    );
+  }
+  
 
   return "";
 }
