@@ -144,6 +144,32 @@ if (query.toLowerCase().includes("multiplied")) {
     }
   }
 
+  function isPrime(num: number): boolean {
+    if (num <= 1) {
+      return false;
+    }
+    for (let i = 2; i <= Math.sqrt(num); i++) {
+      if (num % i === 0) {
+        return false;
+      }
+    }
+    return true;
+  }
+  
+  // Your query processing code
+  if (query.toLowerCase().includes("primes")) {
+    // Extract numbers from the query
+    const match = query.match(/\d+/g);
+    if (match) {
+      const numbers = match.map(Number);
+  
+      // Check each number for primality
+      const primes = numbers.filter(num => isPrime(num));
+  
+      return `${primes.join(", ")}`;
+    }
+  }
+  
   
 
   
