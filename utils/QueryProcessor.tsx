@@ -35,5 +35,20 @@ export default function QueryProcessor(query: string): string {
   }
 }
 
+if (query.toLowerCase().includes("multiplied")) {
+  // Extract numbers from the query
+  const match = query.match(/\d+/g);
+  if (match) {
+    const numbers = match.map(Number);
+  
+  /// Multiply all the numbers
+  let product = 1;
+  for (const num of numbers) {
+    product *= num;
+  }
+
+  return `${product}`;
+  }}
+
   return "";
 }
